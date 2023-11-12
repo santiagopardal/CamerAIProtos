@@ -9,8 +9,6 @@ service Node {
 
     rpc update_sensitivity (UpdateSensitivityRequest) returns (google.protobuf.Empty);
 
-    rpc is_recording (CameraIdParameterRequest) returns (google.protobuf.BoolValue);
-
     rpc record (SwitchRecordingRequest) returns (google.protobuf.Empty);
 
     rpc stop_recording (SwitchRecordingRequest) returns (google.protobuf.Empty);
@@ -25,10 +23,6 @@ service Node {
 message UpdateSensitivityRequest {
     uint32 camera_id = 1;
     double sensitivity = 2;
-}
-
-message NodeIdParameterRequest {
-    uint32 node_id = 1;
 }
 
 message CameraIdParameterRequest {
