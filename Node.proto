@@ -9,9 +9,9 @@ service Node {
 
     rpc update_sensitivity (UpdateSensitivityRequest) returns (google.protobuf.Empty);
 
-    rpc record (SwitchRecordingRequest) returns (google.protobuf.Empty);
+    rpc record (ManyCameraIdsRequest) returns (google.protobuf.Empty);
 
-    rpc stop_recording (SwitchRecordingRequest) returns (google.protobuf.Empty);
+    rpc stop_recording (ManyCameraIdsRequest) returns (google.protobuf.Empty);
 
     rpc add_camera (CameraInfo) returns (google.protobuf.Empty);
 
@@ -29,7 +29,7 @@ message CameraIdParameterRequest {
     uint32 camera_id = 1;
 }
 
-message SwitchRecordingRequest {
+message ManyCameraIdsRequest {
     repeated uint32 cameras_ids = 1;
 }
 
