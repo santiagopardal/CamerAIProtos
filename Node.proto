@@ -2,25 +2,26 @@ syntax = "proto3";
 
 package node;
 
-import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
 
 service Node {
 
-    rpc stop (google.protobuf.Empty) returns (google.protobuf.Empty);
+    rpc stop (Empty) returns (Empty);
 
-    rpc update_sensitivity (UpdateSensitivityRequest) returns (google.protobuf.Empty);
+    rpc update_sensitivity (UpdateSensitivityRequest) returns (Empty);
 
-    rpc record (ManyCameraIdsRequest) returns (google.protobuf.Empty);
+    rpc record (ManyCameraIdsRequest) returns (Empty);
 
-    rpc stop_recording (ManyCameraIdsRequest) returns (google.protobuf.Empty);
+    rpc stop_recording (ManyCameraIdsRequest) returns (Empty);
 
-    rpc add_camera (CameraInfo) returns (google.protobuf.Empty);
+    rpc add_camera (CameraInfo) returns (Empty);
 
-    rpc remove_camera (CameraIdParameterRequest) returns (google.protobuf.Empty);
+    rpc remove_camera (CameraIdParameterRequest) returns (Empty);
 
     rpc get_snapshot_url (CameraIdParameterRequest) returns (google.protobuf.StringValue);
 }
+
+message Empty {}
 
 message UpdateSensitivityRequest {
     uint32 camera_id = 1;
