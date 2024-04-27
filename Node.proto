@@ -21,7 +21,7 @@ service Node {
 
     rpc get_snapshot_url (CameraIdParameterRequest) returns (google.protobuf.StringValue);
 
-    rpc stream_video (CameraIdParameterRequest) returns (google.protobuf.Empty);
+    rpc stream_video (StreamVideoRequest) returns (google.protobuf.Empty);
 }
 
 message UpdateSensitivityRequest {
