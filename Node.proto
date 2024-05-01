@@ -21,7 +21,7 @@ service Node {
 
     rpc get_snapshot_url (CameraIdParameterRequest) returns (google.protobuf.StringValue);
 
-    rpc stream_video (StreamVideoRequest) returns (stream Frame);
+    rpc stream_video (StreamVideoRequest) returns (stream ByteStream);
 }
 
 message UpdateSensitivityRequest {
@@ -58,11 +58,9 @@ message CameraConfigurations {
 }
 
 message StreamVideoRequest {
-    uint32 video_id = 1;
+    string path = 1;
 }
 
-message Frame {
-    uint32 width = 1;
-    uint32 height = 2;
-    bytes image = 3;
+message ByteStream {
+    bytes data = 1;
 }
