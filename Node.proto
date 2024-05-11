@@ -21,6 +21,8 @@ service Node {
 
     rpc get_snapshot_url (CameraIdParameterRequest) returns (google.protobuf.StringValue);
 
+    rpc get_snapshot (CameraIdParameterRequest) returns (ByteStream);
+
     rpc stream_video (StreamVideoRequest) returns (stream ByteStream);
 }
 
