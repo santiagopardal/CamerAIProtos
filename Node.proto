@@ -51,12 +51,8 @@ message CameraInfo {
     uint32 width = 9;
     uint32 height = 10;
     uint32 framerate = 11;
-    CameraConfigurations configurations = 12;
-}
-
-message CameraConfigurations {
-    double sensitivity = 1;
-    bool recording = 2;
+    double sensitivity = 12;
+    bool recording = 13;
 }
 
 message StreamVideoRequest {
